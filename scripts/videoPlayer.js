@@ -14,6 +14,9 @@ export const videoPlayerInit = () => {
     const videoTimeTotal = document.querySelector('.video-time__total');
     const videoVolume = document.querySelector('.video-volume');
     const videoFullscreen = document.querySelector('.video-fullscreen');
+    const videoMute = document.querySelector('.video-mute');
+
+    let prevVolume = videoPlayer.volume;
 
     const toggleIcon = () => {
         if(videoPlayer.paused){
@@ -79,7 +82,19 @@ export const videoPlayerInit = () => {
         videoPlayer.volume = videoVolume.value / 100;
     });
 
-    videoPlayer.volume = 0.8;
+    videoPlayerInit.stop = () => {
+        videoPlayer.pause();
+        toggleIcon();
+    };
+
+    videoMute.addEventListener('click', () => {
+        if(videoPlayer.volume) {
+            prevVolume = videoPlayer.volume;
+            videoPlayer.volume = 0;
+        } else {
+            videoPlayer.volume = prevVolume;
+        }
+    });
     videoVolume.value = videoPlayer.volume * 100;
 };
 

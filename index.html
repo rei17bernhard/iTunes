@@ -132,16 +132,17 @@
                 value="0"
               />
               <p class="video-time video-time__total">00:00</p>
-              <span class="fa-volume-down video-icon"></span>
+              <span class="fa fa-volume-down control-icon"></span>
               <input
                 type="range"
-                class="video-volume"
+                class="video-volume control-volume"
                 min="0"
                 max="100"
                 step="1"
                 value="0"
               />
-              <span class="fa-volume-up video-icon"></span>
+              <span class="fa fa-volume-up control-icon"></span>
+              <span class="fa fa-volume-off control-icon video-mute"></span>
               <span class="video-button video-fullscreen fa fa-expand"></span>
             </nav>
           </div>
@@ -210,7 +211,7 @@
                       type="radio"
                       id="RTLGroove"
                       name="radioStantion"
-                      data-radio-stantion="http://shoutcast.rtl.it:3040/"
+                      data-radio-stantion="https://streamingv2.shoutcast.com/rtl-1025"
                     />
                     <span class="radio-name">RTL Groove</span>
                   </label>
@@ -317,6 +318,17 @@
         </div>
         <footer class="footer-fix radio-footer">
           <button class="radio-stop fa fa-play"></button>
+          <span class="fa fa-volume-down control-icon"></span>
+          <input
+            type="range"
+            class="radio-volume control-volume"
+            min="0"
+            max="100"
+            step="1"
+            value="0"
+          />
+          <span class="fa fa-volume-up control-icon"></span>
+          <span class="fa fa-volume-off control-icon radio-mute"></span>
         </footer>
       </article>
     </main>

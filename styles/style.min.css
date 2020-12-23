@@ -658,10 +658,16 @@ input[type="range"]:focus::-ms-fill-upper {
 .red-text {
   color: #f51e38;
 }
-.video-icon {
+.control-icon {
   margin: 5px;
+  font-size: 24px;
 }
-.video-volume {
+.control-volume {
   max-width: 100px;
+}
+.video-fullscreen,
+.radio-mute,
+.video-mute {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.min.css.map */
