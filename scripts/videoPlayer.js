@@ -13,6 +13,8 @@ export const videoPlayerInit = () => {
     const videoProgress = document.querySelector('.video-progress');
     const videoTimeTotal = document.querySelector('.video-time__total');
 
+    const videoFullscreen = document.querySelector('.video-fullscreen');
+
     const toggleIcon = () => {
         if(videoPlayer.paused){
             videoButtonPlay.classList.remove('fa-pause');
@@ -67,6 +69,10 @@ export const videoPlayerInit = () => {
         const value = videoProgress.value;
 
         videoPlayer.currentTime = (value * duration) / 100;
+    });
+
+    videoFullscreen.addEventListener('click', () => {
+        videoPlayer.requestFullscreen();
     });
 };
 
