@@ -667,7 +667,14 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 .video-fullscreen,
 .radio-mute,
-.video-mute {
+.video-mute,
+.audio-mute {
   cursor: pointer;
+}
+.radio-time {
+  font-size: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  min-width: 62px;
 }
 /*# sourceMappingURL=style.min.css.map */

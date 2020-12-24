@@ -1,3 +1,5 @@
+import {addZero} from './supScript.js'
+
 export const radioPlayerInit = () => {
     const radio = document.querySelector('.radio');
     const radioCoverImg = document.querySelector('.radio-cover__img');
@@ -7,6 +9,7 @@ export const radioPlayerInit = () => {
     const radioStop = document.querySelector('.radio-stop');
     const radioVolume = document.querySelector('.radio-volume');
     const radioMute = document.querySelector('.radio-mute');
+    const radioTimer = document.querySelector('.radio-timer');
 
     const audio = new Audio();
     audio.type = 'audio/aac';
@@ -74,6 +77,16 @@ export const radioPlayerInit = () => {
     });
 
     radioVolume.value = audio.volume * 100;
+
+    audio.addEventListener('timeupdate', () => {
+        const currentTime = audio.currentTime;
+
+        const hoursPassed = Math.floor(currentTime/(60 * 60)) || '0';
+        const minutesPassed = Math.floor((currentTime/60)%60) || '0';
+        const secondsPassed = Math.floor(currentTime%60) || '0';
+
+        radioTimer.textContent = `${addZero(hoursPassed)}:${addZero(minutesPassed)}:${addZero(secondsPassed)}`;
+    });
 
     radioPlayerInit.stop = () => {
         audio.pause();
