@@ -1,0 +1,28 @@
+{
+  "name": "yatunes",
+  "version": "1.0.0",
+  "description": "media player",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --congig webpackBuild.config.js",
+    "dev": "webpack serve --congig webpackDev.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rei17bernhard/iTunes.git"
+  },
+  "author": "Olga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rei17bernhard/iTunes/issues"
+  },
+  "homepage": "https://github.com/rei17bernhard/iTunes#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
