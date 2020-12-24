@@ -86,8 +86,10 @@ export const videoPlayerInit = () => {
         if(videoPlayer.volume) {
             prevVolume = videoPlayer.volume;
             videoPlayer.volume = 0;
+            videoMute.classList.add('red');
         } else {
             videoPlayer.volume = prevVolume;
+            videoMute.classList.remove('red');
         }
     });
     videoVolume.value = videoPlayer.volume * 100;

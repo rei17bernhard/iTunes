@@ -71,8 +71,10 @@ export const radioPlayerInit = () => {
         if(audio.volume) {
             prevVolume = audio.volume;
             audio.volume = 0;
+            radioMute.classList.add('red');
         } else {
             audio.volume = prevVolume;
+            radioMute.classList.remove('red');
         }
     });
 

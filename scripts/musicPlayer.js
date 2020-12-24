@@ -120,8 +120,10 @@ export const musicPlayerInit = () => {
         if(audioPlayer.volume) {
             prevVolume = audioPlayer.volume;
             audioPlayer.volume = 0;
+            audioMute.classList.add('red');
         } else {
             audioPlayer.volume = prevVolume;
+            audioMute.classList.remove('red');
         }
     });
 
